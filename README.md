@@ -36,3 +36,15 @@ and make the appropriate AJAX request to the bot API:
     - the button `backward` should send a `GET` request to `/bot/backward`
     - etc...
 3. add a `script` element to the page which listen for keyboard event and control the bot using the keyboard arrow (or `z`, `q`, `s`, `d`)
+
+### Bonus
+
+1. display the sensors:
+    - on the backend create a new route `/bot/sensor` wich return a JSON with the sensor info
+    - on the frontend send requests to `bot/sensor` at a regular interval and display the JSON
+    - once you have the sensor information displayed, you can create a graph for each sensor using http://www.chartjs.org/
+2. replace AJAX call with Websocket:
+    - create a new projet to learn about socker.io: https://socket.io/get-started/chat/
+    - install `socket.io` on the backend and replace the route to the bot with socket event
+    - on the frontend, connect to the backend using https://developer.mozilla.org/fr/docs/Web/API/WebSocket and send message to control the bot
+    - once you are able to control the bot with Websocket event, try to send the sensor data to the client using Websocket.
